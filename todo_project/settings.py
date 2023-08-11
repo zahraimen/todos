@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     #3rd party
     'rest_framework',
+    'corsheaders'
     
     #local
     'todos',
@@ -56,11 +57,18 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware'
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+'http://localhost:3000',
+'http://localhost:8000',
+)
+
 
 ROOT_URLCONF = 'todo_project.urls'
 
